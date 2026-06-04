@@ -9,9 +9,11 @@ def startgamefunc_client(window: _CreateMainWidgets, takesocket: str) -> None:
     window._widgets['startgamebtn'].config(state='disabled')
     window.window.create_socketClient(takesocket)
 
-def startgamefunc_host(window: _CreateMainWidgets, port: str) -> None:
+def startgamefunc_host(window: _CreateMainWidgets, port: str | int) -> None:
 
-    if not isinstance(port, int):
+    try:
+        port_int = int(port)
+    except ValueError:
         raise TypeError('Порт должен быть числом.')
 
     window.destroy_wigdets()

@@ -36,6 +36,10 @@ class _Widgets():
         self.destroy_wigdets()
         self.set_startmain_menu()
 
+    def change_window_after_connect_player_for_host(self: _CreateMainWidgets) -> None:
+        self._widgets['goto_gamebtn'].config(state='active')
+        self._widgets['players_label'].config(text='Players: 2/2')
+
     def __init__(self: _CreateMainWidgets) -> None:
         self.set_startmain_menu()
 

@@ -14,12 +14,12 @@ class RootWindow():
         self.socketserver = SystemConnection(self, server_or_client=0, port=port)
 
     def start_game_server(self) -> None: #$ TODO
-        print('Игра началась!')
+        print('121212121121214')
 
     def create_socketClient(self, SocketIPPORT: str) -> None:
         if not isinstance(SocketIPPORT, str):
             raise TypeError('Сокет(IP:PORT) должен быть строкой.')
-        self.socketserver = SystemConnection(self, server_or_client=1, takesocket=SocketIPPORT)
+        self.socketserver = SystemConnection(self, server_or_client=1, getsocket=SocketIPPORT)
 
     def __new__(cls, *args, **kwargs) -> Self:
         if cls.__singleton_window__ is None:
